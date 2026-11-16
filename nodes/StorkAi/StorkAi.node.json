@@ -1,0 +1,10 @@
+{
+	"node": "n8n-nodes-storkai.storkAi",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Marketing & Content"],
+	"resources": {
+		"credentialDocumentation": [{ "url": "https://www.stork.ai/developers" }],
+		"primaryDocumentation": [{ "url": "https://www.stork.ai/developers" }]
+	}
+}

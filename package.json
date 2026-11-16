@@ -1,0 +1,60 @@
+{
+  "name": "n8n-nodes-storkai",
+  "version": "0.1.0",
+  "description": "n8n node for the Stork API: talking photo videos, text-to-speech voiceovers and singing videos from one photo.",
+  "license": "MIT",
+  "homepage": "https://www.stork.ai/developers",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "stork",
+    "talking-photo",
+    "lip-sync",
+    "text-to-speech",
+    "tts",
+    "voiceover",
+    "ai-video",
+    "singing-video",
+    "avatar"
+  ],
+  "author": {
+    "name": "Stork.AI",
+    "email": "support@stork.ai"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jupiterspins/n8n-nodes-storkai.git"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "release": "n8n-node release",
+    "prepublishOnly": "n8n-node prerelease"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/StorkAiApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/StorkAi/StorkAi.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "*",
+    "eslint": "9.32.0",
+    "prettier": "3.6.2",
+    "release-it": "^21.1.0",
+    "typescript": "5.9.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
