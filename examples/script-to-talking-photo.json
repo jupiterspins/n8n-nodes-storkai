@@ -1,0 +1,55 @@
+{
+  "name": "Script to talking-photo video (Stork AI)",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 0],
+      "id": "5a1f0c1e-0001-4a6b-9c11-000000000001",
+      "name": "When clicking 'Execute workflow'"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            { "id": "5a1f0c1e-00a1-4a6b-9c11-0000000000a1", "name": "script", "value": "Hi! This video was made from one photo and one line of text, inside an n8n workflow.", "type": "string" },
+            { "id": "5a1f0c1e-00a2-4a6b-9c11-0000000000a2", "name": "photo_url", "value": "https://www.stork.ai/samples/talking-photo/portrait.jpg", "type": "string" },
+            { "id": "5a1f0c1e-00a3-4a6b-9c11-0000000000a3", "name": "voice_id", "value": "en-leo", "type": "string" }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [220, 0],
+      "id": "5a1f0c1e-0002-4a6b-9c11-000000000002",
+      "name": "Script, photo and voice"
+    },
+    {
+      "parameters": {
+        "resource": "talkingPhoto",
+        "operation": "create",
+        "imageUrl": "={{ $json.photo_url }}",
+        "voiceSource": "text",
+        "text": "={{ $json.script }}",
+        "voiceId": "={{ $json.voice_id }}",
+        "tier": "free",
+        "wait": true,
+        "maxWaitMinutes": 20,
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-storkai.storkAi",
+      "typeVersion": 1,
+      "position": [440, 0],
+      "id": "5a1f0c1e-0003-4a6b-9c11-000000000003",
+      "name": "Make the talking photo"
+    }
+  ],
+  "connections": {
+    "When clicking 'Execute workflow'": { "main": [[{ "node": "Script, photo and voice", "type": "main", "index": 0 }]] },
+    "Script, photo and voice": { "main": [[{ "node": "Make the talking photo", "type": "main", "index": 0 }]] }
+  },
+  "pinData": {},
+  "settings": { "executionOrder": "v1" }
+}

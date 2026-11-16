@@ -46,9 +46,15 @@ A job that fails is not charged.
 
 ## Example workflow
 
+[`examples/script-to-talking-photo.json`](examples/script-to-talking-photo.json) turns
+one line of text and one photo into a talking-photo video on the free tier:
+
 1. **Manual Trigger**
-2. **Stork AI**: Resource *Speech*, Operation *Create*, Text `Welcome back to the channel.`, Voice ID `en-ava`, Tier *Free*. The output has `audio_url`.
-3. **Stork AI**: Resource *Talking Photo*, Operation *Create*, Photo URL of a portrait, Voice From *Audio File*, Audio URL `{{ $json.audio_url }}`, Tier *Free*. The output has `video_url`.
+2. **Edit Fields**: `script`, `photo_url`, `voice_id`
+3. **Stork AI**: Resource *Talking Photo*, Operation *Create*. The output has `video_url`.
+
+In n8n, create a workflow, open the menu, choose **Import from File**, pick the
+file and select your Stork AI credential on the last node.
 
 ## Compatibility
 
