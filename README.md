@@ -9,7 +9,9 @@ It makes three things inside a workflow:
 
 ## Installation
 
-In n8n, open **Settings > Community Nodes > Install** and enter `n8n-nodes-storkai`.
+**n8n Cloud:** the node is verified by n8n. Open the nodes panel on the canvas, search for **Stork AI** and add it. If it does not show, the instance owner turns on Verified Community Nodes in the Admin Panel.
+
+**Self-hosted n8n:** open **Settings > Community Nodes > Install** and enter `n8n-nodes-storkai`.
 See the [n8n guide to community nodes](https://docs.n8n.io/integrations/community-nodes/installation/).
 
 ## Credentials
